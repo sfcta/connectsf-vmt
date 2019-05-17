@@ -13152,6 +13152,10 @@ var initialPrep = function () {
             return fetchAddLayers();
 
           case 9:
+            _context.next = 11;
+            return checkCookie();
+
+          case 11:
           case 'end':
             return _context.stop();
         }

@@ -13158,9 +13158,15 @@ var initialPrep = function () {
 
           case 11:
 
-            console.log('5 !!!');
+            console.log('5... ');
+            _context.next = 14;
+            return checkCookie();
 
-          case 12:
+          case 14:
+
+            console.log('6 !!!');
+
+          case 15:
           case 'end':
             return _context.stop();
         }
