@@ -14963,9 +14963,14 @@ function showPosition(position) {
 
 function handleSubmit() {
   this.$refs.recaptcha.execute();
-  var timestamp = new Date();
   app.submit_loading = true;
+}
 
+function onCaptchaVerified(recaptchaToken) {
+  var self = this;
+  self.$refs.recaptcha.reset();
+
+  var timestamp = new Date();
   setTimeout(function () {
     if (app.comment == null | app.comment == '') {
       app.submit_loading = false;
@@ -14988,35 +14993,6 @@ function handleSubmit() {
       // app.submit_disabled = true;
     }
   }, 1000);
-}
-
-function onCaptchaVerified(recaptchaToken) {
-  var self = this;
-  self.$refs.recaptcha.reset();
-  if (!recaptchaToken) {
-    return console.log("recaptchaToken is required");
-  }
-
-  var verifyCaptchaOptions = {
-    secret: "6Le7GqIUAAAAAOmfXozDNDNWQwJE_0dIleut8q16",
-    response: recaptchaToken
-  };
-
-  fetch("https://www.google.com/recaptcha/api/siteverify", {
-    method: 'POST',
-    mode: 'no-cors',
-    body: (0, _stringify2.default)(verifyCaptchaOptions),
-    headers: {
-      'Content-Type': 'application/json'
-    }
-  }).catch(function (error) {
-    return console.error('Error:', error);
-  }).then(function (response) {
-    return function (response) {
-      // JSON.stringify(response)
-      console.log("Congratulations! We think you are human.");
-    };
-  });
 }
 
 function onCaptchaExpired() {
