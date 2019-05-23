@@ -69,13 +69,13 @@
 
   <!-- GOOGLE ANALYTICS -->
   <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-100715169-2"></script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-100715169-9"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
 
-    gtag('config', 'UA-100715169-2');
+    gtag('config', 'UA-100715169-9');
   </script>
 
   <!-- Google reCAPTCHA -->
@@ -134,7 +134,7 @@
           </button>
           &nbsp;
           <button class="ui mini right labeled icon color1 button"
-                  v-on:click="this.window.open('https://connectsf.org/','_blank')">
+                  v-on:click="this.window.open('https://connectsf.org/transportation-needs/','_blank')">
                   <i class="arrow right icon"></i>
                   Learn More
           </button>
@@ -176,15 +176,15 @@
                       type="text" :placeholder="comment_instruction"></textarea>
           </div>
           <div>
-              <vue-recaptcha ref="recaptcha" @verify="onCaptchaVerified"
-                             @expired="onCaptchaExpired" size="invisible"
-                             sitekey="6Le7GqIUAAAAAKWquavN0Mm6RV0DlI_eLS-aaPpU">
-              </vue-recaptcha>
-              <p>This site is protected by reCAPTCHA and the Google
-              <a href="https://policies.google.com/privacy">Privacy Policy</a> and
-              <a href="https://policies.google.com/terms">Terms of Service</a> apply.</p>
+            <p>This site is protected by reCAPTCHA and the Google
+            <a href="https://policies.google.com/privacy">Privacy Policy</a> and
+            <a href="https://policies.google.com/terms">Terms of Service</a> apply.</p>
+            <vue-recaptcha ref="recaptcha" @verify="onCaptchaVerified"
+                            @expired="onCaptchaExpired" size="invisible"
+                            sitekey="6LdSkKQUAAAAAOXWN_tbnvWy0fOdW8kzp922Vzys">
               <button class="ui button color2" type="submit"
-                    v-bind:class="{loading: submit_loading==true, disabled: submit_disabled==true}">Submit</button>
+                      v-bind:class="{loading: submit_loading==true, disabled: submit_disabled==true}">Submit</button>
+            </vue-recaptcha>
           </div>        
         </form>
       </div>
@@ -223,7 +223,7 @@
                     Download data (.zip)
             </button>
 
-            <button v-on:click="this.window.open('https://connectsf.org/','_blank')"
+            <button v-on:click="this.window.open('https://connectsf.org/transportation-needs/','_blank')"
                     class="small ui right floated basic teal button"
                     style="margin-right:5px">
                     Learn more&hellip;
