@@ -14546,8 +14546,8 @@ function showPosition(position) {
 }
 
 function handleSubmit() {
-  this.$refs.recaptcha.execute();
   app.submit_loading = true;
+  this.$refs.recaptcha.execute();
 }
 
 function onCaptchaVerified(recaptchaToken) {
